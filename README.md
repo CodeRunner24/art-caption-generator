@@ -17,7 +17,7 @@ A fine-tuned BLIP model for generating descriptive captions of artwork images, o
 
 ```bash
 # Clone the repository
-git clone https://github.com/yourusername/art-caption-generator.git
+git clone https://github.com/CodeRunner24/art-caption-generator.git
 cd art-caption-generator
 
 # Install dependencies
