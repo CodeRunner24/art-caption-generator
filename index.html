@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎨 Art Caption Generator - AI-Powered Art Description</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .header {
+            text-align: center;
+            color: white;
+            margin-bottom: 50px;
+            padding: 40px 0;
+        }
+        
+        .header h1 {
+            font-size: 3.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .header p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .demo-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        
+        .demo-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 20px 40px;
+            font-size: 1.3rem;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(238, 90, 36, 0.3);
+            margin: 20px 0;
+        }
+        
+        .demo-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(238, 90, 36, 0.4);
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .feature-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .feature-card h3 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .examples {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .examples h2 {
+            text-align: center;
+            color: #667eea;
+            margin-bottom: 30px;
+            font-size: 2.2rem;
+        }
+        
+        .example-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .example-item {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            border-left: 4px solid #667eea;
+        }
+        
+        .example-item h4 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        .github-section {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        
+        .github-button {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            margin: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .github-button:hover {
+            background: #555;
+            transform: translateY(-2px);
+        }
+        
+        .status-badge {
+            display: inline-block;
+            background: #28a745;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 10px 0;
+        }
+        
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .header p {
+                font-size: 1.1rem;
+            }
+            
+            .demo-button {
+                padding: 15px 30px;
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎨 Art Caption Generator</h1>
+            <p>AI-powered artwork description using fine-tuned BLIP model</p>
+        </div>
+        
+        <div class="demo-section">
+            <h2>🚀 Try the Live Demo</h2>
+            <div class="status-badge">🟢 Demo Active</div>
+            <p>Upload any artwork image and get AI-generated descriptions instantly!</p>
+            <a href="https://817776e4eb188b8449.gradio.live" target="_blank" class="demo-button">
+                🖼️ Launch Interactive Demo
+            </a>
+            <p><small>✨ Supports clipboard paste (Ctrl+V / Cmd+V) and multiple generation modes</small></p>
+        </div>
+        
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🤖</div>
+                <h3>Fine-tuned BLIP Model</h3>
+                <p>Specialized for art image captioning with 161M trainable parameters</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🎯</div>
+                <h3>Multiple Generation Modes</h3>
+                <p>Conservative, Balanced, and Creative modes for different use cases</p>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">⚡</div>
+                <h3>Metal GPU Optimized</h3>
+                <p>Optimized for Apple Silicon (M1/M2/M3) with 2.3 it/s speed</p>
+            </div>
+        </div>
+        
+        <div class="examples">
+            <h2>📊 Model Performance</h2>
+            <div class="example-grid">
+                <div class="example-item">
+                    <h4>🎯 Training Results</h4>
+                    <p><strong>Best Validation Loss:</strong> 1.98<br>
+                    <strong>Final Training Loss:</strong> 0.45<br>
+                    <strong>Epochs:</strong> 5 (best at epoch 2)</p>
+                </div>
+                
+                <div class="example-item">
+                    <h4>🖼️ Example Output</h4>
+                    <p><strong>Van Gogh's Starry Night:</strong><br>
+                    "a painting of a swirling night sky with bright stars over a village"</p>
+                </div>
+                
+                <div class="example-item">
+                    <h4>📈 Dataset Info</h4>
+                    <p><strong>ArtCap Dataset:</strong><br>
+                    3,606 unique images<br>
+                    18,030 total captions<br>
+                    Avg: 11.13 words per caption</p>
+                </div>
+                
+                <div class="example-item">
+                    <h4>🔧 Technical Specs</h4>
+                    <p><strong>Architecture:</strong> BLIP<br>
+                    <strong>Batch Size:</strong> 4<br>
+                    <strong>Learning Rate:</strong> 1e-4<br>
+                    <strong>Hardware:</strong> Apple M3</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="github-section">
+            <h2>📁 Open Source Project</h2>
+            <p>Full source code, documentation, and training scripts available on GitHub</p>
+            
+            <a href="https://github.com/CodeRunner24/art-caption-generator" target="_blank" class="github-button">
+                📂 View on GitHub
+            </a>
+            
+            <a href="https://github.com/CodeRunner24/art-caption-generator/archive/refs/heads/main.zip" class="github-button">
+                📥 Download ZIP
+            </a>
+            
+            <div style="margin-top: 30px;">
+                <h3>🚀 Quick Setup</h3>
+                <div style="background: #f8f9fa; padding: 20px; border-radius: 10px; margin: 20px 0; text-align: left;">
+                    <code>
+                        git clone https://github.com/CodeRunner24/art-caption-generator.git<br>
+                        cd art-caption-generator<br>
+                        pip install -r requirements.txt<br>
+                        python src/demo.py
+                    </code>
+                </div>
+            </div>
+            
+            <p><small>⭐ Star the repo if you find it useful!</small></p>
+        </div>
+    </div>
+</body>
+</html> 
