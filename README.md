@@ -16,10 +16,6 @@ A fine-tuned BLIP model for generating descriptive captions of artwork images, o
 ### 1. Installation
 
 ```bash
-# Clone the repository
-git clone https://github.com/CodeRunner24/art-caption-generator.git
-cd art-caption-generator
-
 # Install dependencies
 pip install -r requirements.txt
 ```
@@ -194,28 +190,6 @@ print(analysis)
 **Input**: Picasso's Les Demoiselles d'Avignon  
 **Output**: "an abstract painting featuring geometric faces and fragmented forms in earth tones"
 
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Salesforce BLIP**: Base model architecture
-- **Hugging Face Transformers**: Model implementation
-- **Gradio**: Interactive demo interface
-- **Apple Metal**: GPU acceleration on Apple Silicon
-
-## 📞 Contact
-
-For questions or suggestions, please open an issue or contact [your-email@example.com]
 
 ---
 
